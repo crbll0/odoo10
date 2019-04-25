@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- <template id="listing"> -->
+    <!-- <template id="listing"> -->
         <!--   <ul> -->
         <!--     <li t-foreach="objects" t-as="object"> -->
         <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
@@ -17,6 +17,14 @@
         <!--       <dd><t t-esc="object[field]"/></dd> -->
         <!--     </t> -->
         <!--   </dl> -->
-        <!-- </template> -->
-    </data>
+    <!-- </template> -->
+
+    <template id="assets_backend" name="pos_note assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/comision_pos/static/src/css/custom.css"/>
+            <script type="text/javascript" src="/comision_pos/static/src/js/models.js"></script>
+            <script type="text/javascript" src="/comision_pos/static/src/js/popups.js"></script>
+            <script type="text/javascript" src="/comision_pos/static/src/js/screens.js"></script>
+        </xpath>
+    </template>
 </odoo>

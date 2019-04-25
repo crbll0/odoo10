@@ -15,4 +15,3 @@ class PosOrderLine(models.Model):
     num_lavador = fields.Char('Num lavador')
     num_ticket = fields.Char('Num Ticket')
     supervisor = fields.Many2one('res.users', string='Supervisor')
-

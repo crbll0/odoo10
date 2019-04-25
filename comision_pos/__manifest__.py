@@ -21,5 +21,5 @@
         'views/views.xml',
         'views/templates.xml',
     ],
-    # 'qweb': ['static/src/xml/*.xml'],
+    'qweb': ['static/src/xml/*.xml'],
 }

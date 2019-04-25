@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+
+    <t t-extend="Orderline">                
+        <t t-jquery="ul[class*='info-list']" t-operation="append">
+            <t t-if="line.get_line_comision_lavador()">
+                <li class="info orderline-note">
+                    <i class="fa fa-caret-right"/>Commission lavador: <t t-esc="line.get_line_comision_lavador()"/>
+                </li>
+            </t>
+            <t t-if="line.get_line_comision_ticket()">
+                <li class="info orderline-note">
+                    <i class="fa fa-caret-right"/>Commission Ticket: <t t-esc="line.get_line_comision_ticket()"/>
+                </li>
+            </t>
+            <t t-if="line.get_line_comision_supervisor()">
+                <li class="info orderline-note">
+                    <i class="fa fa-caret-right"/>Commission Supervisor: <t t-esc="line.get_line_comision_supervisor_name()"/>
+                </li>
+            </t>
+        </t>
+    </t>
+
+    <t t-name="button_orderline_comision">
+        <div class='control-button'>
+            <i class='fa fa-comment' /> <span class="label">Line Commission</span>
+        </div>
+    </t>
+
+    <t t-name="popup_orderline_comision">
+        <div class="modal-dialog">
+            <div class="popup order-line-note">
+                <p class="title"><t t-esc=" widget.options.title || 'Confirm ?' " /></p>
+                <p class="body"><t t-esc="  widget.options.body || '' "/></p>
+                <div class="row" style="padding-bottom: 40px">
+                    <div class="form-group">
+                        <label for="acs_lavador">Lavador</label>
+                        <input class="acs-selection form-control" name='acs_lavador' t-att-value='widget.options.lavador ? widget.options.lavador : undefined' placeholder='Lavador'></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="acs_ticket">Ticket</label>
+                        <input class="acs-selection form-control" name='acs_ticket' t-att-value='widget.options.lavador ? widget.options.ticket : undefined' placeholder='Ticket'></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="acs_supervisor">Supervisor</label>
+                        <select class='acs-selection form-control required' name='acs_supervisor'>
+                            <t t-foreach='widget.pos.supervisors' t-as='supervisor'>
+                                <option t-att-selected="widget.options.supervisor == supervisor.id ? true : undefined" t-att-value='supervisor.id'>
+                                    <t t-esc='supervisor.name'/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="button confirm">
+                        Add Commission Data
+                    </div>
+                    <!-- <div class="button cancel">
+                        Close
+                    </div> -->
+                </div>
+            </div>
+        </div>        
+    </t>
+
+</templates>

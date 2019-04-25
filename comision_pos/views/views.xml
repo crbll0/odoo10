@@ -2,6 +2,17 @@
 <odoo>
   <data>
 
+    <record model="ir.ui.view" id="res_users_form_view">
+      <field name="name">res.users.form.view</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="point_of_sale.res_users_form_view"/>
+      <field name="arch" type="xml">
+        <field name="pos_security_pin" position="after">
+            <field name='supervisor_pos'/>
+        </field>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="view_pos_config_form2">
       <field name="name">pos.config.form.view</field>
       <field name="model">pos.config</field>
@@ -72,7 +83,7 @@
     </record>
 
     <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="comision_config_act_window">
+    <record model="ir.actions.act_window" id="action_comision_config">
       <field name="name">comision_pos window</field>
       <field name="res_model">comision.config</field>
       <field name="view_mode">tree,form</field>
@@ -80,9 +91,9 @@
 
     <!-- actions -->
     <menuitem name="Configuracion de Comisiones"
-              id="comision_config_act_window"
-              parent="point_of_sale.menu_point_config_product"
-              action="comision_config_act_window"/>
+        id="menu_comision_config_act_window"
+        parent="point_of_sale.menu_point_config_product"
+        action="action_comision_config"/>
 
   </data>
 </odoo>
