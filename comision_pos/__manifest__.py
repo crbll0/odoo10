@@ -20,6 +20,8 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'wizard/wizard.xml',
+
     ],
     'qweb': ['static/src/xml/*.xml'],
 }

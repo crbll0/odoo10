@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="wizard_commision_pos_form_view">
+      <field name="name">wizard_commision_pos_form_view</field>
+      <field name="model">wizard.comision.report</field>
+      <field name="arch" type="xml">
+        <form>
+          <div class="oe_row">
+            <field name='date_from'/> a <field name='date_to'/>
+          </div>
+          <!-- <field name='supervisor_pos'/> -->
+          <footer>
+            <button name="generate_report" string="Generar" type="object" class=""/>
+            or
+            <button special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_comision_wizard">
+      <field name="name">Wizard Comision</field>
+      <field name="res_model">wizard.comision.report</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <menuitem name="Comision Punto de Ventas"
+        id="menu_comision_config_act_window"
+        parent="point_of_sale.menu_point_rep"
+        action="action_comision_wizard"/>
+
+  </data>
+</odoo>
