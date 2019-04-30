@@ -14,7 +14,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base', 'point_of_sale'],
+    'depends': ['base', 'point_of_sale', 'report_xlsx', 'report_xlsx_helper'],
 
     'data': [
         'security/ir.model.access.csv',
