@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+
+    <report
+        id="report_xlsx"
+        model="wizard.comision.report"
+        string="Comision POS"
+        report_type="xlsx"
+        name="comision_pos.report_xlsx"
+        file="comision_pos.report_xlsx"
+    />
+
+  </data>
+</odoo>
