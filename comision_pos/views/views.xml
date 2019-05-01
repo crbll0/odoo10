@@ -92,7 +92,7 @@
     <!-- actions -->
     <menuitem name="Configuracion de Comisiones"
         id="menu_comision_config_act_window"
-        parent="point_of_sale.menu_point_config_product"
+        parent="point_of_sale.menu_point_rep"
         action="action_comision_config"/>
 
   </data>
