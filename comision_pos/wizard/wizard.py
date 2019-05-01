@@ -11,7 +11,7 @@ class WizardCommisionReport(models.Model):
     _description = 'Wizard POS Commision Report'
 
     date_from = fields.Datetime(string='Desde', required=1)
-    date_to= fields.Datetime(string='Hasta', required=1)
+    date_to= fields.Datetime(string='Hasta', required=1, default=fields.Datetime.now())
 
     @api.multi
     def generate_report(self):
