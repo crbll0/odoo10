@@ -41,7 +41,7 @@ class WizardCommisionReport(models.Model):
                     'tasa_supervisor': tasas.tasa_supervisor,
                     'ticket': l.num_ticket,
                     'lavador': l.num_lavador,
-                    'supervisor': l.supervisor,
+                    'supervisor': l.supervisor.name,
                     'com_sup': tasas.tasa_supervisor * (total),
                     'com_lav': tasas.tasa_lavador * (total),
                     'order_date': l.order_id.date_order,
