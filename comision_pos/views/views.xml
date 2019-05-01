@@ -54,7 +54,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="comision_pos_list">
+    <record model="ir.ui.view" id="comision_pos_form">
       <field name="name">comision_pos list</field>
       <field name="model">comision.config</field>
       <field name="arch" type="xml">
