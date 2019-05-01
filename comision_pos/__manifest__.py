@@ -20,7 +20,7 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'report/report_comision.xml',
+        'report/report_comisionk.xml',
         'wizard/wizard.xml',
 
     ],
